@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task</title>
+</head>
+<body>
+    {{success_msg}}
+    {{ form.name_of_field.errors }}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if not hide %}
+            <button type="submit" class="save btn btn-default">Save</button>
+        {% endif %}
+    </form>
+</body>
+</html>
